@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :routes
   resources :transfers
   resources :stops
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root 'routes#index'
 end

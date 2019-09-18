@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_141619) do
+ActiveRecord::Schema.define(version: 2019_09_18_145256) do
+
+  create_table "routes", force: :cascade do |t|
+    t.string "tam_id"
+    t.string "short_name"
+    t.string "long_name"
+    t.integer "route_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "stops", force: :cascade do |t|
     t.string "tam_id"
