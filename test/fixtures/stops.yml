@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tam_id: MyString
+  code: MyString
+  name: MyString
+  lat: 1.5
+  long: 1.5
+  location_type: 1
+  parent_stop_id: MyString
+
+two:
+  tam_id: MyString
+  code: MyString
+  name: MyString
+  lat: 1.5
+  long: 1.5
+  location_type: 1
+  parent_stop_id: MyString

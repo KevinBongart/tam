@@ -1,0 +1,52 @@
+<%= form_with(model: stop, local: true) do |form| %>
+  <% if stop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stop.errors.count, "error") %> prohibited this stop from being saved:</h2>
+
+      <ul>
+        <% stop.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tam_id %>
+    <%= form.text_field :tam_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lat %>
+    <%= form.text_field :lat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :long %>
+    <%= form.text_field :long %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_type %>
+    <%= form.number_field :location_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parent_stop_id %>
+    <%= form.text_field :parent_stop_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
