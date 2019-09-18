@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_145256) do
+ActiveRecord::Schema.define(version: 2019_09_18_153526) do
 
   create_table "routes", force: :cascade do |t|
     t.string "tam_id"
@@ -38,6 +38,19 @@ ActiveRecord::Schema.define(version: 2019_09_18_145256) do
     t.integer "to_stop_id"
     t.string "transfer_type"
     t.integer "min_transfer_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "tam_id"
+    t.string "route_id"
+    t.string "service_id"
+    t.string "trip_headsign"
+    t.integer "direction_id"
+    t.string "block_id"
+    t.integer "wheelchair_accessible"
+    t.integer "bikes_allowed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

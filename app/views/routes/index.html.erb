@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Tam</th>
+      <th>Useful name</th>
       <th>Short name</th>
       <th>Long name</th>
       <th>Route type</th>
@@ -17,6 +18,7 @@
     <% @routes.each do |route| %>
       <tr>
         <td><%= route.tam_id %></td>
+        <td><%= route.useful_name %></td>
         <td><%= route.short_name %></td>
         <td><%= route.long_name %></td>
         <td><%= route.route_type %></td>

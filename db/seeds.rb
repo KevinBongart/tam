@@ -40,3 +40,18 @@ CSV.read('db/seeds/routes.csv', headers: true).each do |row|
     route.route_type = row['route_type']
   end
 end
+
+puts 'Importing trips...'
+CSV.read('db/seeds/trips.csv', headers: true).each do |row|
+  Trip.where(tam_id: row['trip_id']).first_or_create! do |trip|
+    puts "Creating Trip##{trip.tam_id}"
+
+    trip.route = Route.find_by!(tam_id: row['route_id'])
+    trip.service_id = row['service_id']
+    trip.trip_headsign = row['trip_headsign']
+    trip.direction_id = row['direction_id']
+    trip.block_id = row['block_id']
+    trip.wheelchair_accessible = row['wheelchair_accessible']
+    trip.bikes_allowed = row['bikes_allowed']
+  end
+end

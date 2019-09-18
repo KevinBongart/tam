@@ -22,4 +22,20 @@ class Route < ApplicationRecord
   end
 
   scope :tram, -> { where(route_type: RouteTypes::TRAM) }
+
+  def route_type_str
+    RouteTypes.constants.find { |c| RouteTypes.const_get(c) == route_type }.to_s.titleize
+  end
+
+  def useful_name
+    "#{route_type_str} #{short_name}"
+  end
+
+  def to_s
+    useful_name
+  end
+
+  def to_param
+    "#{id}-#{to_s}".parameterize
+  end
 end

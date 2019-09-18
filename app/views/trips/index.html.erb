@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tam</th>
+      <th>Route</th>
+      <th>Service</th>
+      <th>Trip headsign</th>
+      <th>Direction</th>
+      <th>Block</th>
+      <th>Wheelchair accessible</th>
+      <th>Bikes allowed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= trip.tam_id %></td>
+        <td><%= link_to trip.route, trip.route %></td>
+        <td><%= trip.service_id %></td>
+        <td><%= trip.trip_headsign %></td>
+        <td><%= trip.direction_id %></td>
+        <td><%= trip.block_id %></td>
+        <td><%= trip.wheelchair_accessible %></td>
+        <td><%= trip.bikes_allowed %></td>
+        <td><%= link_to 'Show', trip %></td>
+        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trip', new_trip_path %>
