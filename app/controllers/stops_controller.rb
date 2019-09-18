@@ -4,7 +4,7 @@ class StopsController < ApplicationController
   # GET /stops
   # GET /stops.json
   def index
-    @stops = Stop.all
+    @stops = Stop.parents.all
   end
 
   # GET /stops/1
